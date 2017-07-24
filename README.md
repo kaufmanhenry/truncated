@@ -1,0 +1,2 @@
+# truncated
+✂️ Truncate string arrays.
