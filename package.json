@@ -1,0 +1,9 @@
+{
+  "name": "truncated",
+  "version": "1.0.0",
+  "description": "Truncate string arrays.",
+  "main": "index.js",
+  "repository": "https://github.com/hcjk/truncated.git",
+  "author": "Henry Kaufman <hkaufman19@gmail.com>",
+  "license": "MIT"
+}
