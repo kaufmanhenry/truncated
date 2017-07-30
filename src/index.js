@@ -16,7 +16,14 @@
     }
 }(this, function () {
     const truncated = (array) => {
-        if (!array) return Error('An array is required to truncate.');
+        if (!Array.isArray(array)) throw Error('An array is required to truncate.');
+        if (!array.every(element => typeof element==='string')) {
+            throw Error('All elements in an array passed to truncated() must be strings.');
+        }
+        if (hasDuplicates(array)) {
+            throw Error('An array passed to truncated() must not contain duplicates at the start.');
+        }
+
         let firstElements = findFirstElements(array);
         let arrayToUpdate = array;
         let occurrences = 0;
