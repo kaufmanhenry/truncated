@@ -3,11 +3,16 @@
   "version": "1.0.1",
   "description": "Truncate string arrays.",
   "main": "src/index.js",
+  "readme": "README.md",
   "scripts": {
     "test": "ava"
   },
   "repository": "https://github.com/hcjk/truncated.git",
-  "author": "Henry Kaufman <hkaufman19@gmail.com>",
+  "url": "https://github.com/hcjk/truncated.git",
+  "contributors": [
+    "Henry Kaufman <hkaufman19@gmail.com>",
+    "Jake Billings <jake@jakebillings.com>"
+  ],
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.21.0"
