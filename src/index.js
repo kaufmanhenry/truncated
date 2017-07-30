@@ -15,7 +15,7 @@
         root.truncate = factory();
     }
 }(this, function () {
-    let truncated = (array) => {
+    const truncated = (array) => {
         if (!array) return Error('An array is required to truncate.');
         let firstElements = findFirstElements(array);
         let arrayToUpdate = array;
