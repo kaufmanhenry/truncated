@@ -1,12 +1,10 @@
 # ✂️ truncated [![Build Status](https://travis-ci.org/hcjk/truncated.svg?branch=master)](https://travis-ci.org/hcjk/truncated>)
 
-Truncate string arrays.
+Truncates all strings in an array to the minimum length required to keep them unique.
 
-## Install
+Uses UMD module declaration. See https://github.com/umdjs/umd/blob/master/templates/returnExports.js
 
-```shell
-$ yarn add truncated
-```
+The module will load as a single global function "truncate" in a browser. Will return as a node module function in node. Works with AMD.
 
 ## Usage
 
@@ -17,6 +15,22 @@ const longArray = ['monday', 'tuesday', 'wednesday'];
 const short = truncated(longArray);
 // ['m', 't', 'w'] 🙌
 ```
+
+## Install
+
+```shell
+$ yarn add truncated
+```
+
+## Test
+
+```shell
+$ yarn test
+```
+
+## Contributors
+- [Henry Kaufman](https://henrykaufman.me) - Developer and Designer
+- [Jake Billings](https://jakebillings.com) - Full-stack Web Developer
 
 ## License
 
