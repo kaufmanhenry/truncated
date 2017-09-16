@@ -24,37 +24,30 @@
             throw Error('An array passed to truncated() must not contain duplicates at the start.');
         }
 
-        let firstElements = findFirstElements(array);
-        let arrayToUpdate = array;
-        let occurrences = 0;
+        let depth = 1;
+        let truncatedArray;
+        do {
+            truncatedArray = array.map(element => {
+                return element.substring(0,depth);
+            });
+            depth++;
+        } while (hasDuplicates(truncatedArray));
 
-        while (hasDuplicates(firstElements)) {
-            occurrences++;
-            arrayToUpdate = removeFirstElements(arrayToUpdate);
-            firstElements = findFirstElements(arrayToUpdate);
-        }
-
-        return array.map((a) => a.substring(0, (occurrences + 1) || a.length));
+        return truncatedArray;
     };
 
-    const findFirstElements = array => array.map((a) => a[0] || null);
-
-    const removeFirstElements = array => array.map((a) => a.substring(1));
-
+    /**
+     * Returns true if an array contains duplicate
+     * @param array
+     * @returns {boolean} Contains duplicates
+     */
     const hasDuplicates = (array) => {
-        for (let i = 0; i < array.length; i++) {
-            if (array[i] === null) return false;
-            if (getAllIndexes(array, array[i]).length > 1) return true;
+        let uniques = [];
+        for (let i=0;i<array.length;i++) {
+            if (uniques.indexOf(array[i])>=0) return true;
+            uniques.push(array[i]);
         }
         return false;
-    };
-
-    const getAllIndexes = (arr, val) => {
-        let indexes = [], i = -1;
-        while ((i = arr.indexOf(val, i + 1)) != -1) {
-            indexes.push(i);
-        }
-        return indexes;
     };
 
     return truncated;
