@@ -17,11 +17,15 @@
         root.truncated = factory();
     }
 }(this, function () {
-    const truncated = (array) => {
+    const truncated = (array, options) => {
         //Error checking/validation
         //Basic type checking
         if (!Array.isArray(array)) throw Error('An array is required to truncate.');
-        if (!array.every(element => typeof element==='string')) {
+        // If options exist, ensure that it's an object
+        if (options && (typeof options !== 'object')) throw Error('Options must be an object');
+
+        // Ensure that all elements of the array are strings given that namespace in the options object isn't defined
+        if (!options && !array.every(element => typeof element==='string')) {
             throw Error('All elements in an array passed to truncated() must be strings.');
         }
         //If the array already has duplicates, then we will be stuck in an infinite loop, and there's no way to
@@ -30,13 +34,16 @@
             throw Error('An array passed to truncated() must not contain duplicates at the start.');
         }
 
+        // Update the array if the namespace exists
+        if (options && options.namespace) {
+            array = array.map(element => element[options.namespace]);
+        }
+
         //Keep appending more characters to the mapped array until it's unique.
         let depth = 1;
         let truncatedArray;
         do {
-            truncatedArray = array.map(element => {
-                return element.substring(0,depth);
-            });
+            truncatedArray = array.map(element => element.substring(0,depth));
             depth++;
         } while (hasDuplicates(truncatedArray));
 

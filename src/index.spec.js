@@ -16,6 +16,11 @@ test('three days of the week (from README)', (t) => {
     t.is(s, 'm,t,w');
 });
 
+test('array of objects with a namespace', (t) => {
+    const s = truncated([{ day: 'monday' }, { day: 'tuesday' }, { day: 'wednesday' }], { namespace: 'day' }).toString();
+    t.is(s, 'm,t,w');
+});
+
 test('should throw an error if a non-array argument is passed', (t) => {
     try {
         truncated({dummy: true});
