@@ -1,6 +1,6 @@
 {
   "name": "truncated",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Truncate string arrays.",
   "main": "src/index.js",
   "readme": "README.md",
@@ -18,6 +18,8 @@
     "ava": "^0.21.0"
   },
   "ava": {
-    "files": ["src/index.spec.js"]
+    "files": [
+      "src/index.spec.js"
+    ]
   }
 }
