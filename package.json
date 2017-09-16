@@ -1,6 +1,6 @@
 {
   "name": "truncated",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Truncate string arrays.",
   "main": "src/index.js",
   "readme": "README.md",
