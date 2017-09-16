@@ -14,7 +14,7 @@
     } else if (typeof module === 'object' && module.exports) {
         module.exports = factory();
     } else {
-        root.truncate = factory();
+        root.truncated = factory();
     }
 }(this, function () {
     const truncated = (array) => {
