@@ -1,4 +1,4 @@
-# ✂️ truncated [![Build Status](https://travis-ci.org/hcjk/truncated.svg?branch=master)](https://travis-ci.org/hcjk/truncated>)
+# ✂️ truncated [![Build Status](https://travis-ci.org/hcjk/truncated.svg?branch=master)](https://travis-ci.org/hcjk/truncated)
 
 Truncates all strings in an array to the minimum length required to keep them unique.
 
@@ -29,7 +29,7 @@ $ yarn test
 ```
 
 ## Contributors
-- [Henry Kaufman](https://henrykaufman.me) - Developer and Designer
+- [Henry Kaufman](https://henrykaufman.me) - Designer and Developer
 - [Jake Billings](https://jakebillings.com) - Full-stack Web Developer
 
 ## License
